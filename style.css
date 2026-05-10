@@ -10,7 +10,7 @@ body {
   background: white;
   padding: 25px;
   border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -60,4 +60,23 @@ li {
   padding: 14px;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+.dark-mode .container {
+  background: #1e1e1e;
+}
+
+.dark-mode li {
+  background: #2c2c2c;
+}
+
+.dark-mode input {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
 }
