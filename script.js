@@ -5,7 +5,7 @@ document.getElementById("streak").textContent = streak;
 const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 savedTasks.forEach(task => {
-  createTaskElement(task);
+  createTaskElement(task.category, task.text);
 });
 
 function addTask() {
@@ -15,9 +15,14 @@ function addTask() {
     return;
   }
 
-  createTaskElement(input.value);
+  const category = document.getElementById("category").value;
 
-  savedTasks.push(input.value);
+  createTaskElement(category, input.value);
+
+  savedTasks.push({
+    category: category,
+    text: input.value
+  });
   localStorage.setItem("tasks", JSON.stringify(savedTasks));
 
   input.value = "";
@@ -27,13 +32,13 @@ function addTask() {
   document.getElementById("streak").textContent = streak;
 }
 
-function createTaskElement(taskText) {
+function createTaskElement(category, taskText) {
   const taskList = document.getElementById("taskList");
 
   const li = document.createElement("li");
 
   li.innerHTML = `
-    <span class="task-text">⬜ ${taskText}</span>
+    <span class="task-text">${category} ⬜ ${taskText}</span>
 
     <div>
       <button class="complete-btn">✔</button>
