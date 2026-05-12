@@ -33,22 +33,20 @@ function createTaskElement(taskText) {
   const li = document.createElement("li");
 
   li.innerHTML = `
-  <span class="task-text">⬜ ${taskText}</span>
+    <span class="task-text">⬜ ${taskText}</span>
 
-  <div>
-    <button class="complete-btn">✔</button>
-    <button class="delete-btn">X</button>
-  </div>
-`;
+    <div>
+      <button class="complete-btn">✔</button>
+      <button class="delete-btn">X</button>
+    </div>
+  `;
 
   const completeBtn = li.querySelector(".complete-btn");
-
+  const deleteBtn = li.querySelector(".delete-btn");
   const taskTextElement = li.querySelector(".task-text");
 
   completeBtn.addEventListener("click", () => {
-
     taskTextElement.classList.toggle("completed");
-
   });
 
   deleteBtn.addEventListener("click", () => {
@@ -57,10 +55,9 @@ function createTaskElement(taskText) {
 
   taskList.appendChild(li);
 }
+
 const darkModeToggle = document.getElementById("darkModeToggle");
 
 darkModeToggle.addEventListener("click", () => {
-
   document.body.classList.toggle("dark-mode");
-
 });
