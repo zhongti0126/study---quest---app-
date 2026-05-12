@@ -33,11 +33,23 @@ function createTaskElement(taskText) {
   const li = document.createElement("li");
 
   li.innerHTML = `
-    ✅ ${taskText}
-    <button class="delete-btn">X</button>
-  `;
+  <span class="task-text">⬜ ${taskText}</span>
 
-  const deleteBtn = li.querySelector(".delete-btn");
+  <div>
+    <button class="complete-btn">✔</button>
+    <button class="delete-btn">X</button>
+  </div>
+`;
+
+  const completeBtn = li.querySelector(".complete-btn");
+
+  const taskTextElement = li.querySelector(".task-text");
+
+  completeBtn.addEventListener("click", () => {
+
+    taskTextElement.classList.toggle("completed");
+
+  });
 
   deleteBtn.addEventListener("click", () => {
     li.remove();

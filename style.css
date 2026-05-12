@@ -95,3 +95,18 @@ li {
 li:hover {
   transform: translateY(-2px);
 }
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.complete-btn {
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
